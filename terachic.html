@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TeraChic — Mode africaine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#150f2b; --bg2:#1f1840;
+  --card:#241c47;
+  --cream:#f6ecd9;
+  --ochre:#d98e2b;
+  --marigold:#f2b705;
+  --magenta:#b8336a;
+  --line:rgba(246,236,217,0.14);
+  --text:#f6ecd9; --muted:#b9aed0;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing:border-box;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top, 0px);}
+body{margin:0; background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; min-height:100%;}
+h1,h2,h3{font-family:'Fraunces',serif; margin:0; font-weight:600; letter-spacing:-0.01em;}
+img{max-width:100%;}
+a{color:inherit;}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+header{position:sticky; top:0; z-index:20; background:rgba(21,15,43,0.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding-top: env(safe-area-inset-top, 0px);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1120px; margin:0 auto;}
+.logo{font-family:'Fraunces',serif; font-size:1.5rem; font-weight:700;}
+.logo span{color:var(--marigold);}
+.navlinks{display:flex; gap:28px; font-size:0.95rem;}
+.navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
+.navlinks a:hover{color:var(--text);}
+.cart-btn{background:var(--marigold); color:#150f2b; border:none; padding:10px 18px; border-radius:999px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:8px; font-size:0.9rem;}
+.cart-btn:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:2px solid var(--marigold); outline-offset:2px;}
+
+.hero{padding:72px 0 56px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+.hero p.eyebrow{color:var(--ochre); font-weight:600; margin-bottom:14px;}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem); line-height:1.05;}
+.hero p.lede{color:var(--muted); margin:20px 0 28px; max-width:46ch; line-height:1.6;}
+.btn-primary{background:var(--magenta); color:var(--cream); border:none; padding:14px 26px; border-radius:6px; font-weight:700; font-size:1rem; cursor:pointer;}
+.pattern{aspect-ratio:1/1.1; border-radius:16px; background-image:
+  repeating-linear-gradient(45deg, var(--ochre) 0 10px, transparent 10px 20px),
+  repeating-linear-gradient(-45deg, var(--magenta) 0 8px, transparent 8px 36px),
+  linear-gradient(160deg, var(--bg2), var(--card));
+  background-blend-mode:screen, screen, normal;
+  border:1px solid var(--line);
+}
+
+.section-title{font-size:1.8rem; margin-bottom:6px;}
+.section-sub{color:var(--muted); margin-bottom:32px;}
+section{padding:56px 0;}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;}
+.swatch{aspect-ratio:4/3;}
+.sw1{background-image:repeating-linear-gradient(90deg, var(--ochre) 0 14px, var(--bg2) 14px 28px), repeating-linear-gradient(0deg, transparent 0 20px, rgba(0,0,0,.25) 20px 22px);}
+.sw2{background-image:radial-gradient(circle at 20% 30%, var(--magenta) 0 18px, transparent 19px), radial-gradient(circle at 70% 70%, var(--marigold) 0 14px, transparent 15px), linear-gradient(var(--bg2),var(--bg2)); background-size:60px 60px, 60px 60px, cover;}
+.sw3{background-image:repeating-linear-gradient(135deg, var(--marigold) 0 6px, var(--bg2) 6px 26px);}
+.sw4{background-image:repeating-linear-gradient(60deg, var(--ochre) 0 4px, transparent 4px 24px), repeating-linear-gradient(-60deg, var(--magenta) 0 4px, transparent 4px 24px), linear-gradient(var(--bg2),var(--card));}
+.sw5{background-image:radial-gradient(circle at 50% 50%, var(--ochre) 0 3px, transparent 4px); background-size:22px 22px; background-color:var(--bg2);}
+.sw6{background-image:repeating-linear-gradient(0deg, var(--magenta) 0 8px, var(--bg2) 8px 30px);}
+.card-body{padding:18px; display:flex; flex-direction:column; gap:6px; flex:1;}
+.tag{font-size:0.75rem; color:var(--ochre); font-weight:600;}
+.card h3{font-size:1.1rem;}
+.price{color:var(--marigold); font-weight:700; margin-top:auto; padding-top:10px;}
+.add-btn{margin-top:10px; background:transparent; border:1px solid var(--marigold); color:var(--marigold); padding:9px; border-radius:6px; font-weight:600; cursor:pointer;}
+.add-btn:hover{background:var(--marigold); color:#150f2b;}
+
+.story{background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.story .wrap{max-width:720px; text-align:center;}
+.story p{color:var(--muted); line-height:1.7; font-size:1.05rem;}
+
+footer{padding:40px 24px; text-align:center; color:var(--muted); font-size:0.9rem;}
+
+/* Panier */
+.overlay{position:fixed; inset:0; background:rgba(10,7,20,0.6); opacity:0; pointer-events:none; transition:opacity .25s; z-index:30;}
+.overlay.open{opacity:1; pointer-events:auto;}
+.drawer{position:fixed; top:0; right:-420px; width:min(400px,92vw); height:100%; background:var(--bg2); border-left:1px solid var(--line); z-index:31; transition:right .3s ease; display:flex; flex-direction:column; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px);}
+.drawer.open{right:0;}
+.drawer-head{display:flex; justify-content:space-between; align-items:center; padding:20px; border-bottom:1px solid var(--line);}
+.drawer-head h3{font-size:1.2rem;}
+.close-x{background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer;}
+.drawer-items{flex:1; overflow-y:auto; padding:16px 20px;}
+.line-item{display:flex; justify-content:space-between; gap:10px; padding:12px 0; border-bottom:1px solid var(--line); font-size:0.92rem;}
+.line-item .rm{background:none; border:none; color:var(--muted); cursor:pointer; font-size:0.8rem; text-decoration:underline;}
+.drawer-foot{padding:20px; border-top:1px solid var(--line);}
+.total-row{display:flex; justify-content:space-between; margin-bottom:14px; font-weight:700;}
+.empty-msg{color:var(--muted); padding:30px 0; text-align:center; font-size:0.92rem;}
+
+/* Modal commande */
+.modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:40; padding:20px;}
+.modal.open{display:flex;}
+.modal-box{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; max-width:420px; width:100%; max-height:85vh; overflow-y:auto;}
+.modal-box h3{margin-bottom:16px; font-size:1.3rem;}
+.field{margin-bottom:14px;}
+.field label{display:block; font-size:0.85rem; color:var(--muted); margin-bottom:6px;}
+.field input{width:100%; padding:10px 12px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--text); font-family:inherit; font-size:0.95rem;}
+.confirm{text-align:center; display:none;}
+.confirm.show{display:block;}
+.confirm .num{color:var(--marigold); font-weight:700; font-size:1.2rem; margin:10px 0;}
+
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr 1fr;}
+  .navlinks{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Tera<span>Chic</span></div>
+    <nav class="navlinks">
+      <a href="#collections">Collections</a>
+      <a href="#histoire">Notre histoire</a>
+      <a href="#contact-foot">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">🛍️ Panier (<span id="cart-count">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <p class="eyebrow">Boutique en ligne</p>
+      <h1>Des étoffes qui racontent<br>une histoire.</h1>
+      <p class="lede">TeraChic habille l'élégance africaine contemporaine : wax, bogolan et broderies revisités pour le quotidien et les grandes occasions.</p>
+      <a href="#collections"><button class="btn-primary">Voir la collection</button></a>
+    </div>
+    <div class="pattern"></div>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="wrap">
+    <h2 class="section-title">Notre collection</h2>
+    <p class="section-sub">Chaque pièce est confectionnée à la main par nos ateliers partenaires.</p>
+    <div class="grid" id="product-grid"></div>
+  </div>
+</section>
+
+<section class="story" id="histoire">
+  <div class="wrap">
+    <h2 class="section-title">Notre histoire</h2>
+    <p>Née à Dakar, TeraChic travaille main dans la main avec des couturières et tisserands locaux pour proposer une mode fière de ses racines, pensée pour être portée aujourd'hui. Chaque commande soutient directement les ateliers qui la confectionnent.</p>
+  </div>
+</section>
+
+<footer id="contact-foot">
+  <div>TeraChic — Dakar, Sénégal</div>
+  <div>contact@terachic.sn · +221 77 000 00 00</div>
+</footer>
+
+<!-- Panier -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Votre panier</h3>
+    <button class="close-x" onclick="closeCart()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><span id="cart-total">0 FCFA</span></div>
+    <button class="btn-primary" style="width:100%;" onclick="openCheckout()">Valider la commande</button>
+  </div>
+</div>
+
+<!-- Modal commande -->
+<div class="modal" id="checkout-modal">
+  <div class="modal-box">
+    <div id="form-view">
+      <h3>Finaliser la commande</h3>
+      <div class="field"><label for="f-nom">Nom complet</label><input id="f-nom" type="text" placeholder="Awa Diop"></div>
+      <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" placeholder="+221 77 000 00 00"></div>
+      <div class="field"><label for="f-adr">Adresse de livraison</label><input id="f-adr" type="text" placeholder="Dakar, Sénégal"></div>
+      <button class="btn-primary" style="width:100%; margin-top:6px;" onclick="validerCommande()">Confirmer la commande</button>
+      <button class="add-btn" style="width:100%; margin-top:10px; border-color:var(--line); color:var(--muted);" onclick="closeCheckout()">Annuler</button>
+    </div>
+    <div class="confirm" id="confirm-view">
+      <h3>Commande enregistrée ✔</h3>
+      <p style="color:var(--muted);">Merci ! Votre numéro de commande :</p>
+      <div class="num" id="order-num"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Nous vous contacterons pour confirmer la livraison.</p>
+      <button class="btn-primary" style="width:100%; margin-top:10px;" onclick="closeCheckout()">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const products = [
+  {id:'p1', name:'Robe Wax Adama', tag:'Robes', price:28000, sw:'sw1'},
+  {id:'p2', name:'Ensemble Bogolan Fari', tag:'Ensembles', price:35000, sw:'sw2'},
+  {id:'p3', name:'Boubou Marigold', tag:'Robes', price:42000, sw:'sw3'},
+  {id:'p4', name:'Veste Brodée Sankara', tag:'Vestes', price:38000, sw:'sw4'},
+  {id:'p5', name:'Turban Perles Nafi', tag:'Accessoires', price:9000, sw:'sw5'},
+  {id:'p6', name:'Jupe Indigo Thiané', tag:'Ensembles', price:24000, sw:'sw6'},
+];
+
+let cart = {};
+try{
+  const saved = localStorage.getItem('terachic_cart');
+  if(saved) cart = JSON.parse(saved);
+}catch(e){ cart = {}; }
+
+function fmt(n){ return n.toLocaleString('fr-FR') + ' FCFA'; }
+
+function renderProducts(){
+  const grid = document.getElementById('product-grid');
+  grid.innerHTML = products.map(p => `
+    <div class="card">
+      <div class="swatch ${p.sw}"></div>
+      <div class="card-body">
+        <span class="tag">${p.tag}</span>
+        <h3>${p.name}</h3>
+        <span class="price">${fmt(p.price)}</span>
+        <button class="add-btn" onclick="addToCart('${p.id}')">Ajouter au panier</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addToCart(id){
+  cart[id] = (cart[id]||0) + 1;
+  saveCart();
+  renderCart();
+  openCart();
+}
+function removeFromCart(id){
+  delete cart[id];
+  saveCart();
+  renderCart();
+}
+function saveCart(){
+  try{ localStorage.setItem('terachic_cart', JSON.stringify(cart)); }catch(e){}
+}
+function renderCart(){
+  const items = Object.entries(cart);
+  const count = items.reduce((s,[,q])=>s+q,0);
+  document.getElementById('cart-count').textContent = count;
+  const container = document.getElementById('drawer-items');
+  if(items.length === 0){
+    container.innerHTML = '<div class="empty-msg">Votre panier est vide.</div>';
+    document.getElementById('cart-total').textContent = fmt(0);
+    return;
+  }
+  let total = 0;
+  container.innerHTML = items.map(([id,qty])=>{
+    const p = products.find(x=>x.id===id);
+    total += p.price*qty;
+    return `<div class="line-item">
+      <span>${p.name} × ${qty}</span>
+      <span>${fmt(p.price*qty)}<br><button class="rm" onclick="removeFromCart('${id}')">retirer</button></span>
+    </div>`;
+  }).join('');
+  document.getElementById('cart-total').textContent = fmt(total);
+}
+
+function openCart(){
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeCart(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+function openCheckout(){
+  if(Object.keys(cart).length === 0) return;
+  document.getElementById('checkout-modal').classList.add('open');
+  document.getElementById('form-view').style.display = 'block';
+  document.getElementById('confirm-view').classList.remove('show');
+}
+function closeCheckout(){
+  document.getElementById('checkout-modal').classList.remove('open');
+}
+function validerCommande(){
+  const nom = document.getElementById('f-nom').value.trim();
+  const tel = document.getElementById('f-tel').value.trim();
+  if(!nom || !tel){ alert('Merci de renseigner au moins votre nom et votre téléphone.'); return; }
+  const orderNum = 'TC-' + Math.floor(100000 + Math.random()*899999);
+  document.getElementById('order-num').textContent = orderNum;
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('confirm-view').classList.add('show');
+  cart = {};
+  saveCart();
+  renderCart();
+}
+
+renderProducts();
+renderCart();
+</script>
+</body>
+</html>
